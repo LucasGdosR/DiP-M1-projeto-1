@@ -1,0 +1,136 @@
+body {
+    background-color:lightgray;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+label {font-weight: 600;}
+
+li {
+    background-color: whitesmoke;
+    border: 3px groove gray;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+
+h3 {
+    text-align: center;
+    margin: 0;
+}
+
+ul {list-style: none;}
+
+.smaller {
+    font-size: 1rem;
+}
+
+.input {
+    border-radius: 10px;
+    padding: 5px;
+    flex-grow: 1;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.leftColumn {
+    background-color: rgb(0, 0, 94);
+    color: whitesmoke;
+    padding: 15px;
+    border-radius: 20px;
+    align-self: flex-start;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    text-align: center;
+}
+
+.totals {
+    font-weight: 700;
+    width: 60px;
+}
+
+.button{
+    margin: 0 5px 0 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.editButton {
+    background-color: yellow;
+    color: black;
+}
+
+.deleteButton {
+    background-color: orangered;
+    color: black;
+}
+
+.youtubeButton {
+    background-color: red;
+    color: whitesmoke;
+}
+
+li > p {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 3px;
+}
+
+#category {color: rgb(122, 122, 122);}
+
+#q {
+    border-radius: 20px;
+    margin-left: 38px;
+    padding: 5px;
+    flex-grow: 1;
+}
+
+#resetFilter{
+    border-radius: 20px;
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+#search {
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+#resetForm {
+    background-color: red;
+    color: black;
+    font-weight: 800;
+}
+
+#submitForm {
+    background-color: green;
+    color: black;
+    font-weight: 800;
+}
+
+#tips > li {
+    margin: 0 15px 20px 0;
+}

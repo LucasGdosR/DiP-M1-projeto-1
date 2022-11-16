@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVinKnowledge</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div class="column leftColumn">
+        <header class="row">
+            <img src="dev-in-knowledge-logo.png" alt="Lâmpada brilhando referenciando uma ideia" height="53px" width="70px">
+            <div class="column">
+                <h1><span class="smaller">DEVin</span>Knowledge</h1>
+                <h2>Learn, Code and Save</h2>
+            </div>
+        </header>
+        <form action="" class="column" id="form">
+
+            <input type="hidden" id="id" value="">
+
+            <label for="title">Título</label>
+            <input type="text" id="title" name="title" class="input" autocomplete="off" required minlength="8" maxlength="64" placeholder="Digite um título">
+
+            <label for="languageSkill">Linguagem/Skill</label>
+            <input type="text" id="languageSkill" name="languageSkill" class="input" autocomplete="off" required minlength="2" maxlength="16" placeholder="Digite uma linguagem ou skill">
+
+            <label for="category">Categoria</label>
+            <select name="category" id="category" class="input" required>
+                <option value="" disabled selected="selected">Selecione uma categoria</option>
+                <option value="FrontEnd">FrontEnd</option>
+                <option value="BackEnd">BackEnd</option>
+                <option value="FullStack">FullStack</option>
+                <option value="Comportamental/Soft">Comportamental/Soft</option>
+            </select>
+
+            <label for="description">Descrição</label>
+            <textarea name="description" id="description" class="input" cols="40" rows="20" required minlength="16" maxlength="512" placeholder="Escreva aqui o detalhamento da sua dica..."></textarea>
+
+            <label for="youtube">Vídeo do YouTube</label>
+            <input type="url" name="youtube" class="input" id="youtube" placeholder="https://www.youtube.com/">
+
+            <div class="row">
+                <button type="reset" id="resetForm" class="input">Limpar</button>
+                <input type="submit" value="Salvar" class="input" id="submitForm">
+            </div>
+        </form>
+    </div>
+    <main class="column">
+
+        <ul id="cards" class="row">
+            <li id="cardsTotal" class="totals"></li>
+            <li id="cardsFront" class="totals"></li>
+            <li id="cardsBack" class="totals"></li>
+            <li id="cardsFull" class="totals"></li>
+            <li id="cardsSoft" class="totals"></li>
+        </ul>
+
+        <form id="filter" class="row">
+            <input type="search" id="q" placeholder="Digite um título para buscar...">
+            <input type="submit" value="Buscar" id="search">
+            <button type="reset" id="resetFilter">Limpar</button>
+        </form>
+
+        <ul id="tips"></ul>
+    </main>
+</body>
+</html>
