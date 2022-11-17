@@ -3,6 +3,7 @@ const STORAGE_KEY = 'DEVINKNOWLEDGE';
 let tips = [];
 let idCount = 0;
 const list = document.getElementById("tips");
+const q = document.getElementById('q');
 // End global variables
 
 // Local storage functions
@@ -178,11 +179,13 @@ function deleteMe(event) {
 }
 // End CRUD
 
-function filter(event) {
-    event.preventDefault();
+function filter() {
     list.innerHTML = '';
+    const qValue = q.value.toLowerCase();
     tips.forEach(tip => {
-        if (tip.title.toLowerCase().includes(event.target.q.value.toLowerCase()))
+        if (tip.title.toLowerCase().includes(qValue)
+         || tip.languageSkill.toLowerCase().includes(qValue)
+         || tip.category.toLowerCase().includes(qValue))
             renderTip(tip);
     })
 }
@@ -195,7 +198,7 @@ function loadInitialData() {
 
 // Event listeners
 window.addEventListener('load', loadInitialData);
-document.getElementById('filter').addEventListener('submit', (event) => {filter(event)});
+q.addEventListener('input', filter);
 document.getElementById('form').addEventListener('submit', (event) => {submitForm(event)});
 document.getElementById('resetFilter').addEventListener('click', renderTips);
 document.getElementById('resetForm').addEventListener('click', () => {document.getElementById('id').value = ''});
