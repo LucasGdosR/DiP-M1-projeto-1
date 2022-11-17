@@ -200,5 +200,4 @@ function loadInitialData() {
 window.addEventListener('load', loadInitialData);
 q.addEventListener('input', filter);
 document.getElementById('form').addEventListener('submit', (event) => {submitForm(event)});
-document.getElementById('resetFilter').addEventListener('click', renderTips);
 document.getElementById('resetForm').addEventListener('click', () => {document.getElementById('id').value = ''});
