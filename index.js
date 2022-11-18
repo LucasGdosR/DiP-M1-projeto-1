@@ -74,9 +74,17 @@ function addTip(input) {
 // CRUD: R
 function renderTips() {
     list.innerHTML = '';
+    const qValue = q.value.toLowerCase();
     tips.forEach(tip => {
-        renderTip(tip);
+        if (filter(tip, qValue)) renderTip(tip);
     });
+}
+
+function filter(tip, qValue) {
+    if (tip.title.toLowerCase().includes(qValue)
+     || tip.languageSkill.toLowerCase().includes(qValue)
+     || tip.category.toLowerCase().includes(qValue))
+        return true;
 }
 
 function renderTip(tip) {
@@ -179,17 +187,6 @@ function deleteMe(event) {
 }
 // End CRUD
 
-function filter() {
-    list.innerHTML = '';
-    const qValue = q.value.toLowerCase();
-    tips.forEach(tip => {
-        if (tip.title.toLowerCase().includes(qValue)
-         || tip.languageSkill.toLowerCase().includes(qValue)
-         || tip.category.toLowerCase().includes(qValue))
-            renderTip(tip);
-    })
-}
-
 function loadInitialData() {
     [tips, idCount] = getLocalTips();
     renderTotals();
@@ -198,6 +195,6 @@ function loadInitialData() {
 
 // Event listeners
 window.addEventListener('load', loadInitialData);
-q.addEventListener('input', filter);
+q.addEventListener('input', renderTips);
 document.getElementById('form').addEventListener('submit', (event) => {submitForm(event)});
 document.getElementById('resetForm').addEventListener('click', () => {document.getElementById('id').value = ''});
